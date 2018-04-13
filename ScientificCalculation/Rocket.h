@@ -10,7 +10,7 @@ public:
 	~Rocket();
 	//Refresh state from Dynamic.
 	void stateRefresh(State const & dyn);
-
+	//dfas
 	friend class Dynamic;
 private:
 	
