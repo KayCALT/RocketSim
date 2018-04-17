@@ -23,5 +23,10 @@ void State::writeState(Vecd const & vp, Vecd const & vv, double const & phi, dou
 	statMass.push_back(mass);
 }
 
+double norm2(Vecd vec)
+{
+	double rslt;
+	rslt = pow(vec[0] ,2 )+ pow(vec[1] , 2 )+ pow(vec[2] ,2);
 
-
+	return rslt ;
+}
