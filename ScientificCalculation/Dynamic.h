@@ -10,8 +10,8 @@ public:
 	Dynamic(Rocket & roc);
 	~Dynamic();
 public:
-	State DataReserve;                             //Restore the calculated states.
-	void Calculation(double t);                                    //Runge Kutta 45 numerical integral method.
+	State dataReserve;                             //Restore the calculated states.
+	void calculation(double t);                                    //Runge Kutta 45 numerical integral method.
 private:
 	Vecd _currentPos;                                      //State vector
 	Vecd _currentVel;

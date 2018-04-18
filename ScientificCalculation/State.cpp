@@ -30,3 +30,17 @@ double norm2(Vecd vec)
 
 	return rslt ;
 }
+
+//I assume the size of a and b are equal here.Or it will return an empty vector.
+Vecd operator+(Vecd const & a, Vecd const & b)
+{
+	Vecd vec;
+	if (a.size()==b.size())
+	{
+		for (int i = 0; i < int(a.size()); i++)
+		{
+			vec.push_back(a[i] + b[i]);
+		}
+	}
+	return vec;
+}

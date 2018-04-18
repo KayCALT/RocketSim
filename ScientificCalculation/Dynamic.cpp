@@ -16,13 +16,13 @@ Dynamic::~Dynamic()
 }
 
 //Calculation.
-void Dynamic::Calculation(double t)
+void Dynamic::calculation(double t)
 {
 	_currentPhi = getPhi(t);
-	double P = (_currentMass > _roc._tOff)*_roc._propulsion;      //The thrust.
+	double Thrust = (_currentMass > _roc._tOff)*_roc._propulsion;      //The thrust.
 	double q = 0.5*1.226*exp(-0.1378*_currentPos[1] / 1000.0)*norm2(_currentVel);   //Dynamic pressure.
-	double R[3]={ -_roc._cx *q*_roc._s,_roc._cy*q*_roc._alp*_roc._s,0};    //Aerodynamic force.
-
+	Vecd R{ -_roc._cx *q*_roc._s,_roc._cy*q*_roc._alp*_roc._s,0};    //Aerodynamic force in velocity coordinate.
+	Vecd P{ Thrust,0,0 };
 	
 }
 

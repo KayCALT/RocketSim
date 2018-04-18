@@ -1,6 +1,7 @@
 #pragma once
 //State variable container class.
 //Restore the process states.
+//Also some general constants and functions.
 #include<vector>
 using std::vector;
 typedef vector<double> Vecd;
@@ -27,4 +28,6 @@ public:
 
 };
 
+//Some general functions.(Maybe run against the spirit of OOP?)
 double norm2(Vecd vec);
+Vecd operator+(Vecd const & a,Vecd const & b);

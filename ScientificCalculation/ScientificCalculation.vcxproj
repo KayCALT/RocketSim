@@ -148,12 +148,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Dynamic.cpp" />
+    <ClCompile Include="Mtrx.cpp" />
     <ClCompile Include="Rocket.cpp" />
     <ClCompile Include="ScientificCalculation.cpp" />
     <ClCompile Include="State.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dynamic.h" />
+    <ClInclude Include="Mtrx.h" />
     <ClInclude Include="Rocket.h" />
     <ClInclude Include="State.h" />
   </ItemGroup>
