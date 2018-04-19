@@ -1,6 +1,7 @@
 #pragma once
 #include"Rocket.h"
 #include"State.h"
+#include"Mtrx.h"
 #include<cmath>
 
 
@@ -20,5 +21,7 @@ private:
 	double _currentMass;
 	Rocket _roc;
 	double _ds[NumOfState];              //Derivatives.
+
+	Mtrx _op;
 };
 

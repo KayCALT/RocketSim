@@ -94,3 +94,27 @@ Vecd2 Mtrx::createTmat(double angle, xyz a)
 	}
 	return mat;
 }
+//m is square here.Quite task-specified.
+void Mtrx::transpose(Vecd2 & m)
+{
+	double tem;
+	for (int i = 0; i < 3; i++)       
+	{
+		for (int j =i+1 ; j < 3; j++)
+		{
+			tem = m[i][j];
+			m[i][j] = m[j][i];
+			m[j][i] = tem;
+		}
+	}
+}
+
+Vecd Mtrx::vecNumpro(double k, Vecd const & v)
+{
+	Vecd o(v.size());
+	for (int i = 0; i < int(v.size()); i++)
+	{
+		o[i] = k * v[i];
+	}
+	return o;
+}

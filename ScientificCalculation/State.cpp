@@ -22,7 +22,7 @@ void State::writeState(Vecd const & vp, Vecd const & vv, double const & phi, dou
 	statPhi.push_back(phi);
 	statMass.push_back(mass);
 }
-
+//vec is supposed to be 3X1(for now)
 double norm2(Vecd vec)
 {
 	double rslt;
