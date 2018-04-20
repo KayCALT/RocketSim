@@ -17,16 +17,16 @@ Rocket::~Rocket()
 {
 }
 
-void Rocket::stateRefresh(State const & dy)
-{
-	for (int i = 0; i < 3; i++)
-	{
-		_position[i] = dy.statPos[i].back();
-		_velocity[i] = dy.statVel[i].back();
-	}
-	_phi = dy.statPhi.back();
-	_mass = dy.statMass.back();
-}
+//void Rocket::stateRefresh(State const & dy)
+//{
+//	for (int i = 0; i < 3; i++)
+//	{
+//		_position[i] = dy.statPos[i].back();
+//		_velocity[i] = dy.statVel[i].back();
+//	}
+//	_phi = dy.statPhi.back();
+//	_mass = dy.statMass.back();
+//}
 
 
 

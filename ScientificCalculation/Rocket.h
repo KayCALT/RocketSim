@@ -9,7 +9,7 @@ public:
 	Rocket(double mass = 3000, double propulsion = 74000, double dm=8,double cx=0.3,double cy=0.03,double s=0.785,double to=250);
 	~Rocket();
 	//Refresh state from Dynamic.
-	void stateRefresh(State const & dyn);
+	//void stateRefresh(State const & dyn);
 	//dfas
 	friend class Dynamic;
 private:

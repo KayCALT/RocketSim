@@ -12,16 +12,19 @@ public:
 	~Dynamic();
 public:
 	State dataReserve;                             //Restore the calculated states.
-	void calculation(double t);                                    //Runge Kutta 45 numerical integral method.
+	void calculation(double t,double step);                                    //Runge Kutta 45 numerical integral method.
+	void rk45(double t, double h);
 private:
 	Vecd _currentPos;                                      //State vector
 	Vecd _currentVel;
 	double _currentPhi;
-	double getPhi(double t);
 	double _currentMass;
 	Rocket _roc;
-	double _ds[NumOfState];              //Derivatives.
-
+	Vecd _ds;            //Derivatives.
 	Mtrx _op;
+
+	double getPhi(double t);
+	
+	void func(double t,Vecd const & r,Vecd const & v,double const & m);
 };
 

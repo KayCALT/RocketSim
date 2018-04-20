@@ -12,14 +12,13 @@ State::~State()
 {
 }
 
-void State::writeState(Vecd const & vp, Vecd const & vv, double const & phi, double const & mass)
+void State::writeState(Vecd const & vp, Vecd const & vv,double const & mass)
 {
 	for (int i = 0; i < 3; i++)
 	{
 		statPos[i].push_back(vp[i]);
 		statVel[i].push_back(vv[i]);
 	}
-	statPhi.push_back(phi);
 	statMass.push_back(mass);
 }
 //vec is supposed to be 3X1(for now)
@@ -43,4 +42,14 @@ Vecd operator+(Vecd const & a, Vecd const & b)
 		}
 	}
 	return vec;
+}
+
+Vecd operator*(double k, Vecd const & v)
+{
+	Vecd o(v.size());
+	for (int i = 0; i < int(v.size()); i++)
+	{
+		o[i] = k * v[i];
+	}
+	return o;
 }
