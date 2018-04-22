@@ -12,7 +12,7 @@ State::~State()
 {
 }
 
-void State::writeState(Vecd const & vp, Vecd const & vv,double const & mass)
+void State::writeState(Vecd const & vp, Vecd const & vv,double const & mass,double const & t)
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -20,6 +20,7 @@ void State::writeState(Vecd const & vp, Vecd const & vv,double const & mass)
 		statVel[i].push_back(vv[i]);
 	}
 	statMass.push_back(mass);
+	statTspan.push_back(t);
 }
 //vec is supposed to be 3X1(for now)
 double norm2(Vecd const & vec)

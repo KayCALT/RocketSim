@@ -18,13 +18,13 @@ class State
 public:
 	State();
 	~State();
-	void writeState(Vecd const & vp,Vecd const & vv,double const & mass);
+	void writeState(Vecd const & vp,Vecd const & vv,double const & mass,double const & t);
 
 public:
 	Vecd2 statPos;
 	Vecd2 statVel;
 	Vecd statMass;
-
+	Vecd statTspan;
 };
 
 //Some general functions.(Maybe run against the spirit of OOP?)

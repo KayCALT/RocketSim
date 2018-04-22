@@ -59,7 +59,7 @@ void Dynamic::rk45(double t,double h)
 	_currentVel[2] += ka[5];
 	_currentMass += ka[6];
 
-	dataReserve.writeState(_currentPos, _currentVel, _currentMass);
+	dataReserve.writeState(_currentPos, _currentVel, _currentMass,t);
 
 }
 
