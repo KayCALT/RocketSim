@@ -22,7 +22,7 @@ void State::writeState(Vecd const & vp, Vecd const & vv,double const & mass)
 	statMass.push_back(mass);
 }
 //vec is supposed to be 3X1(for now)
-double norm2(Vecd vec)
+double norm2(Vecd const & vec)
 {
 	double rslt;
 	rslt = pow(vec[0] ,2 )+ pow(vec[1] , 2 )+ pow(vec[2] ,2);

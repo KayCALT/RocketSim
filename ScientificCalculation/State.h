@@ -28,6 +28,6 @@ public:
 };
 
 //Some general functions.(Maybe run against the spirit of OOP?)
-double norm2(Vecd vec);
+double norm2(Vecd const & vec);
 Vecd operator+(Vecd const & a,Vecd const & b);
 Vecd operator*(double k, Vecd const & v);

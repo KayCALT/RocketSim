@@ -17,17 +17,6 @@ Dynamic::~Dynamic()
 }
 
 //Calculation.
-void Dynamic::calculation(double t,double step)
-{
-	//每个计算周期都要重新声明定义一遍，似乎不太好//
-	
-	
-	
-
-
-
-}
-
 
 void Dynamic::rk45(double t,double h)
 {
@@ -35,40 +24,40 @@ void Dynamic::rk45(double t,double h)
 	Vecd k1 = h * _ds;
 	_currentPos[0] +=0.5* k1[0];
 	_currentPos[1] += 0.5*k1[1];
-	_currentPos[2] += 0.5*k1[3];
-	_currentVel[0] += 0.5*k1[4];
-	_currentVel[1] += 0.5*k1[5];
-	_currentVel[3] += 0.5*k1[6];
-	_currentMass += 0.5*k1[7];
+	_currentPos[2] += 0.5*k1[2];
+	_currentVel[0] += 0.5*k1[3];
+	_currentVel[1] += 0.5*k1[4];
+	_currentVel[2] += 0.5*k1[5];
+	_currentMass += 0.5*k1[6];
 	func(t, _currentPos, _currentVel, _currentMass);
 	Vecd k2 = h * _ds;
 	_currentPos[0] += 0.5* k2[0];
 	_currentPos[1] += 0.5*k2[1];
-	_currentPos[2] += 0.5*k2[3];
-	_currentVel[0] += 0.5*k2[4];
-	_currentVel[1] += 0.5*k2[5];
-	_currentVel[3] += 0.5*k2[6];
-	_currentMass += 0.5*k2[7];
+	_currentPos[2] += 0.5*k2[2];
+	_currentVel[0] += 0.5*k2[3];
+	_currentVel[1] += 0.5*k2[4];
+	_currentVel[2] += 0.5*k2[5];
+	_currentMass += 0.5*k2[6];
 	func(t, _currentPos, _currentVel, _currentMass);
 	Vecd k3 = h * _ds;
 	_currentPos[0] +=  k3[0];
 	_currentPos[1] += k3[1];
-	_currentPos[2] += k3[3];
-	_currentVel[0] += k3[4];
-	_currentVel[1] += k3[5];
-	_currentVel[3] += k3[6];
-	_currentMass += k3[7];
+	_currentPos[2] += k3[2];
+	_currentVel[0] += k3[3];
+	_currentVel[1] += k3[4];
+	_currentVel[2] += k3[5];
+	_currentMass += k3[6];
 	func(t, _currentPos, _currentVel, _currentMass);
 	Vecd k4 = h * _ds;
 
 	Vecd ka =_op.vecNumpro(1.0/6.0,k1 + 2*k2 + 2*k3 + k4);
 	_currentPos[0] += ka[0];
 	_currentPos[1] += ka[1];
-	_currentPos[2] += ka[3];
-	_currentVel[0] += ka[4];
-	_currentVel[1] += ka[5];
-	_currentVel[3] += ka[6];
-	_currentMass += ka[7];
+	_currentPos[2] += ka[2];
+	_currentVel[0] += ka[3];
+	_currentVel[1] += ka[4];
+	_currentVel[2] += ka[5];
+	_currentMass += ka[6];
 
 	dataReserve.writeState(_currentPos, _currentVel, _currentMass);
 

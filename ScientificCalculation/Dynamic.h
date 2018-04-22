@@ -12,7 +12,7 @@ public:
 	~Dynamic();
 public:
 	State dataReserve;                             //Restore the calculated states.
-	void calculation(double t,double step);                                    //Runge Kutta 45 numerical integral method.
+    //Runge Kutta 45 numerical integral method.
 	void rk45(double t, double h);
 private:
 	Vecd _currentPos;                                      //State vector
